@@ -1,0 +1,25 @@
+{% extends 'base-bookmark.html' %}
+
+{% block content %}
+<div id="content">
+
+    <h1 id="title">{{ object.title }}</h1>
+
+    <a href="{% url 'bookmark_update' bookmark.id %}" class="bm-d-a">
+        <button class="bm-d-b">UPDATE</button>
+    </a>
+    <a href="{% url 'bookmark_delete' bookmark.id %}" class="bm-d-a">
+        <button class="bm-d-b">DELETE</button>
+    </a>
+
+    <ul>
+        <li class="de-li">URL:<a href="{{ object.url }}">{{ object.url }}</a></li>
+        <li class="de-li">Create Date: {{ object.create_date }}</li>
+        <li class="de-li">Modify Date: {{ object.modify_date }}</li>
+    </ul>
+
+    <iframe src="{{ object.url }}"></iframe>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends 'base-blog.html' %}
+
+{% block content %}
+<div id="li-content">
+    <h1 id="li-title">Blog <span id="title_small">made with Django</span></h1>
+    <div class="li-btn">
+    <a href="{% url 'post_create' %}">
+        <button>CREATE</button>
+    </a>
+    </div>
+    {% for post in object_list %}
+    <div class="box">
+        <p class="li-p box_title">{{ post.title }}</p>
+        <div class="imgBox">
+            <a href="{% url 'blog_detail' post.id %}">
+                <img src="{{ post.image.url }}">
+            </a>
+        </div>
+
+        <p class="description li-p"><span class="label">Description:</span> {{ post.description }}</p>
+        <p><span class="label li-p">Create Date: </span> {{ post.create_date }}</p>
+        <p><span class="label li-p">Modify_Date: </span> {{ post.modify_date }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

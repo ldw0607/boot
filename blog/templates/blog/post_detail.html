@@ -1,0 +1,26 @@
+{% extends 'base-blog.html' %}
+
+{% block content %}
+<div id="content">
+
+    <h1 id="title">{{ object.title }}</h1>
+    <div id="btnbox">
+            <a href="{% url 'post_update' post.id %}">
+                <button>UPDATE</button>
+            </a>
+            <a href="{% url 'post_delete' post.id %}">
+                <button>DELETE</button>
+            </a>
+        </div>
+    <div class="box">
+
+        <p class="description"><span class="label">Description: </span>{{ object.description }}</p>
+        <p><span class="label">Create Date: </span>{{ object.create_date }}</p>
+        <p><span class="label">Modify Date: </span>{{ object.modify_date }}</p>
+        <img src="{{ object.image.url }}" width="600" height="600">
+        <div id="disqus_thread"></div>
+    </div>
+
+</div>
+
+{% endblock content %}

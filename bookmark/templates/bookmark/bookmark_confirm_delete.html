@@ -1,0 +1,10 @@
+{% extends 'base-bookmark.html' %}
+
+{% block content %}
+<form method="post" action=".">{% csrf_token %}
+
+    <p class="bm-t">DELETE?</p>
+    <button class="bm-btn" type="submit">YES</button>
+</form>
+
+{% endblock content %}

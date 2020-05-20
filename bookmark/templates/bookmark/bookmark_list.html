@@ -1,0 +1,26 @@
+{% extends 'base-bookmark.html' %}
+
+{% block content %}
+
+<div id="listcontent">
+
+    <h1 id="title">
+        최<span class="small">고로</span>
+        애<span class="small">정하는</span>
+        유<span class="small">튜브</span>
+    </h1>
+
+    <a class="li-a" href="{% url 'bookmark_create' %}">
+        <button>CREATE</button>
+    </a>
+
+    <ul>
+        {% for bookmark in object_list %}
+        <li class="li-li">
+            <a class="li-a" href="{% url 'detail' bookmark.id %}">{{ bookmark }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+</div>
+{% endblock content %}

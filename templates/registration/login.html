@@ -1,0 +1,54 @@
+<!--    <style>-->
+<!--        #tab{-->
+<!--            border: 3px solid gray;-->
+<!--            height:150px;-->
+<!--            width:400px;-->
+<!--            margin:auto;-->
+<!--            margin-top:100px;-->
+<!--            border-radius:10px;-->
+<!--        }-->
+<!--        .label{-->
+<!--            display:inline-block;-->
+<!--            width: 200px;-->
+<!--            font-weight:bolder;-->
+<!--        }-->
+<!--        .text{-->
+<!--            display:inline-block;-->
+<!--            width:165px;-->
+<!--        }-->
+<!--        .box{-->
+<!--            margin:auto;-->
+<!--            padding-left:10px;-->
+<!--            padding-right:10px;-->
+<!--        }-->
+<!--        button{-->
+<!--            font-weight:bolder;-->
+<!--            color:white;-->
+<!--            background-color:orangered;-->
+<!--            width:380px;-->
+<!--            height:50px;-->
+<!--            margin-left:8px;-->
+<!--            margin-top:10px;-->
+<!--            border-radius:10px;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="tab">
+    <form method="post" action=".">{% csrf_token %}
+        <br>
+        <div class="box">
+            <div class="label">{{ form.username.label_tag }}</div>
+            <div class="text">{{ form.username }}</div>
+        </div>
+        <div class="box">
+            <div class="label">{{ form.password.label_tag }}</div>
+            <div class="text">{{ form.password }}</div>
+        </div>
+        <button type="submit" class="reg-btn">SIGN IN</button>
+        <input type="hidden" value="{{ next }}">
+    </form>
+</div>
+{% endblock content %}

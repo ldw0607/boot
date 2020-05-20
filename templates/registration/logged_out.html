@@ -1,0 +1,44 @@
+<!--    <style>-->
+<!--        button{-->
+<!--            font-weight:bolder;-->
+<!--            color:white;-->
+<!--            background-color:orangered;-->
+<!--            width:40%;-->
+<!--            height:50px;-->
+<!--            margin-left:8px;-->
+<!--            margin-top:10px;-->
+<!--            border-radius:10px;-->
+<!--        }-->
+<!--        #tab{-->
+<!--            border: 3px solid gray;-->
+<!--            height:200px;-->
+<!--            width:400px;-->
+<!--            margin:auto;-->
+<!--            margin-top:100px;-->
+<!--            border-radius:10px;-->
+<!--        }-->
+<!--        .label{-->
+<!--            display:inline-block;-->
+<!--            width: 100%;-->
+<!--            font-weight:bolder;-->
+<!--            text-align:center;-->
+<!--            font-size:30px;-->
+<!--        }-->
+<!--        .box{-->
+<!--            margin:auto;-->
+<!--            display:block-->
+<!--            text-align:center;-->
+<!--        }-->
+<!--    </style>-->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="tab">
+    <p class="label">Sign out complete</p>
+    <div class="box">
+    <button class="reg-btn"><a class="im-a" href="{% url 'index' %}">Go Index</a></button>
+    <button class="reg-btn"><a class="im-a" href="{% url 'login' %}">Sign in Again</a></button>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'base-blog.html' %}
+
+{% block content %}
+<div id="content">
+<form method="post" action="." enctype="multipart/form-data">{% csrf_token %}
+    <div id="box">
+    <div>
+        {{ form.title.label_tag }}{{ form.title }}
+    </div>
+    <div>
+        {{ form.image.label_tag }}{{ form.image }}
+    </div>
+    <div>
+        {{ form.description.label_tag }}{{ form.description }}
+    </div>
+    </div>
+    <button type="submit">CREATE/UPDATE</button>
+</form>
+</div>
+
+{% endblock content %}
